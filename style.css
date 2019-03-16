@@ -1,6 +1,9 @@
 html,body{
     height: 100%;
 }
+.mobile-alart{
+    display: none;
+}
 .inforamtion {
     position: absolute;
     left: 50%;
@@ -100,15 +103,21 @@ span.sound {
 
  /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) { 
-    .inforamtion {
+    .wrapper {
         display: none;
+    }
+    .mobile-alart{
+        display: block;
     }
     
  }
 
  /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) { 
-    .inforamtion {
+    .wrapper {
         display: none;
+    }
+    .mobile-alart{
+        display: block;
     }
  }
