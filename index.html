@@ -5,13 +5,24 @@
   <title>JS Drum Kit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="preloader.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   
 </head>
 <body>
     
   <div class="wrapper">
+    <!--This section for preeloader-->
+    <div id="overlay">
+        <div class="overlay-inner">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
       <div class="inforamtion">
           <h2>Basic DramKit, Lets Enjoy!</h2>
           <p>You only press your keyboard for playing DrumKit. Just Press A,S,D,F,G,H,J,K,L</p>
@@ -63,6 +74,8 @@
       <h1>Sorry, Small device not support. Try it on your pc/desktop.</h1>
     </div>
 
+    
+
   <audio data-key="65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
   <audio data-key="68" src="sounds/kick.wav"></audio>
@@ -74,8 +87,13 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 
-<script src="preloader.js"></script>
 <script>
+// For Overlay
+var overlay = document.getElementById("overlay");
+window.addEventListener('load', function(){
+  overlay.style.display = 'none';
+});
+
 // Making Function For PlaySound
   function playSound(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
